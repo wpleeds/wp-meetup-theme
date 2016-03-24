@@ -706,7 +706,9 @@ img {
   text-decoration: none;
   border: 1px solid #BBB;
   border: none;
-  box-shadow: 0 -3px 0 rgba(0, 0, 0, 0.1) inset; }
+  box-shadow: 0 -3px 0 rgba(0, 0, 0, 0.1) inset;
+  box-sizing: border-box;
+  text-align: center; }
   .btn:hover, .btn:focus,
   .button:hover,
   .button:focus {
@@ -881,6 +883,11 @@ textarea {
       vertical-align: top; }
   .header-event .btn {
     margin-right: .375rem; }
+    @media screen and (max-width: 600px) {
+      .header-event .btn {
+        width: 100%;
+        display: block;
+        margin: .75rem 0; } }
   @media screen and (max-width: 600px) {
     .header-event .entry {
       -webkit-flex-wrap: wrap;
@@ -906,11 +913,14 @@ textarea {
     right: 25%; }
   .site-footer .widget {
     box-sizing: border-box;
-    -webkit-flex: 0 0 33.333%;
-        -ms-flex: 0 0 33.333%;
-            flex: 0 0 33.333%;
+    width: 100%;
     padding: 0 0.75rem;
     margin-bottom: 1.5rem; }
+    @media screen and (min-width: 600px) {
+      .site-footer .widget {
+        -webkit-flex: 0 0 33.333%;
+            -ms-flex: 0 0 33.333%;
+                flex: 0 0 33.333%; } }
 
 .primary-nav {
   position: fixed;
