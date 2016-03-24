@@ -674,6 +674,8 @@ th {
 img {
   max-width: 100%;
   height: auto; }
+  .entry img {
+    margin: .75rem 0; }
 
 .aligncenter {
   clear: both;
@@ -947,10 +949,13 @@ textarea {
     top: 32px; }
     @media screen and (max-width: 782px) {
       body.admin-bar .primary-nav {
-        top: 46px; } }
+        position: static; } }
 
 body.has-primary-nav {
   padding-top: 3rem; }
+  @media screen and (max-width: 782px) {
+    body.has-primary-nav.admin-bar {
+      padding-top: 0; } }
 
 .entry-list .entry {
   -webkit-flex: 0 0 100%;

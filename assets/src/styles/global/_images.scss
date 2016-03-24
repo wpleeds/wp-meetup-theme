@@ -1,6 +1,10 @@
 img {
 	max-width: 100%;
 	height: auto;
+
+	.entry & {
+		margin: .75rem 0;
+	}
 }
 
 .aligncenter {
@@ -20,10 +24,6 @@ img {
 
 .grid-item-8 {
 
-}
-
-.size-large {
-	// width: 100%;
 }
 
 

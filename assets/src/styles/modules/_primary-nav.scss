@@ -29,7 +29,7 @@
 
 		// Media query as used by WordPress for admin bar.
 		@media screen and (max-width: 782px) {
-			top: 46px;
+			position: static;
 		}
 
 	}
@@ -38,4 +38,11 @@
 
 body.has-primary-nav {
 	padding-top: 3rem;
+
+	&.admin-bar {
+		@media screen and (max-width: 782px) {
+			padding-top: 0;
+		}
+	}
+
 }
