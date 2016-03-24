@@ -16,6 +16,12 @@ add_action( 'widgets_init',       __NAMESPACE__ . '\\widgets_init' );
 
 require_once( __DIR__ . '/inc/events/events.php' );
 
+if ( ! function_exists( 'cmb_init' ) ) {
+	define( 'CMB_PATH', __DIR__ . '/lib/custom-meta-boxes' );
+	define( 'CMB_URL', get_stylesheet_directory_uri() . '/lib/custom-meta-boxes' );
+	require_once( 'lib/custom-meta-boxes/custom-meta-boxes.php' );
+}
+
 /**
  * Set up the theme.
  */
