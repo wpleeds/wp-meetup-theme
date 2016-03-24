@@ -52,6 +52,13 @@
 
 	.btn {
 		margin-right: .375rem;
+
+		@media #{ $media-sm } {
+			width: 100%;
+			display: block;
+			margin: .75rem 0;
+		}
+
 	}
 
 	@media #{ $media-sm } {
