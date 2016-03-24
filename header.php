@@ -24,7 +24,7 @@ namespace WPLeeds;
 
 </head>
 
-<body <?php body_class( 'has-primary-nav' ); ?>>
+<body <?php body_class(); ?>>
 
 	<?php get_template_part( 'parts/primary-nav' ); ?>
 
