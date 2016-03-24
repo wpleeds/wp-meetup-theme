@@ -1,0 +1,35 @@
+@mixin font-xxl {
+	font-size: $font-size-alpha;
+	line-height: $base-line-height * 2.5;
+	margin: 3rem auto;
+}
+
+@mixin font-xl {
+	font-size: $font-size-beta;
+	line-height: $base-line-height * 1.5;
+	margin: 1.5rem auto;
+}
+
+@mixin font-lg {
+	font-size: $font-size-gamma;
+	line-height: $base-line-height * 1.25;
+	margin: 1.5rem auto;
+}
+
+@mixin font-md {
+	font-size: $font-size-delta;
+	line-height: $base-line-height;
+	margin: .75rem auto;
+}
+
+// Standard.
+@mixin font-std {
+	font-size: $font-size-base;
+	margin: .75rem auto;
+}
+
+// Small.
+@mixin font-sm {
+	font-size: $base-font-size * 0.75;
+	line-height: $base-line-height;
+}

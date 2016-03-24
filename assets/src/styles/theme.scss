@@ -1,0 +1,54 @@
+$base-font-size: 18px;
+$base-line-height: 25px;
+
+$media-xl: 'screen and ( min-width: 1100px )';
+$media-lg: 'screen and ( min-width: 900px )';
+$media-md: 'screen and ( min-width: 600px )';
+$media-sm: 'screen and ( max-width: 600px )';
+
+$grid-gutter:  1.5rem;
+
+$font-family-base:    'Open Sans', 'Helvetica Neue', Arial, 'sans-serif';
+$font-family-heading: 'Open Sans', 'Helvetica Neue', Arial, 'sans-serif';
+
+$base-px:             18px;
+$font-size-base:      1rem;
+$base-line-height:    1.5rem;
+$font-size-alpha:     3.375rem;
+$font-size-beta:      2.25rem;
+$font-size-gamma:     1.5rem;
+$font-size-delta:     1.25rem;
+
+$color-header:        #21759B;
+$color-btn-base:      #DDD;
+$color-btn-primary:   #8fd86b;
+$color-btn-secondary: #8DD057;
+$color-border-lt:     #DDD;
+
+
+@import url( 'http://fonts.googleapis.com/css?family=Open+Sans' );
+
+@import "global/_normalize.scss";
+@import "global/_type.scss";
+@import "global/_tables.scss";
+@import "global/_grid.scss";
+@import "global/_nav.scss";
+@import "global/_images.scss";
+@import "global/_buttons.scss";
+@import "global/_forms.scss";
+
+@import "modules/_site-header.scss";
+@import "modules/_site-header-event.scss";
+@import "modules/_site-footer.scss";
+@import "modules/_primary-nav.scss";
+@import "modules/_entries.scss";
+@import "modules/_gallery.scss";
+
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1200px;
+	position: relative;
+}
+
+

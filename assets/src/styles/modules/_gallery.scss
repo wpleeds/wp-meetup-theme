@@ -1,0 +1,29 @@
+.gallery {
+
+	@extend .grid;
+	margin: 1.5rem #{ - 1 * ( $grid-gutter / 4 ) };
+	align-items: center;
+
+	.gallery-item {
+
+		@extend .grid-item;
+		padding: 0 $grid-gutter/2;
+		margin: 0 0 1.5rem;
+		text-align: center;
+
+		img {
+			margin: 0;
+			width: 100%;
+			height: auto;
+			vertical-align: top;
+		}
+	}
+
+
+	@for $i from 1 through 9 {
+		&.gallery-columns-#{$i} .gallery-item {
+			flex: 0 0 #{ 100/$i }%;
+		}
+	}
+
+}

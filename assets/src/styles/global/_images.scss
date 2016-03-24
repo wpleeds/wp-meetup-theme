@@ -1,0 +1,50 @@
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.aligncenter {
+	clear: both;
+	margin: auto;
+}
+
+.alignleft {
+	float: left;
+	margin-right: $grid-gutter;
+}
+
+.alignright {
+	float: right;
+	margin-left: $grid-gutter;
+}
+
+.grid-item-8 {
+
+}
+
+.size-large {
+	// width: 100%;
+}
+
+
+.pull-image-container {
+
+	@media #{ $media-lg } {
+
+		margin: 0 #{ $grid-gutter / -2 };
+
+		img {
+			margin-top: 1.5rem;
+			margin-bottom: 1.5rem;
+		}
+
+		.alignleft {
+			margin-left: calc( #{ -1 * grid-item( 2, 8 ) } + .75rem );
+		}
+
+		.alignright {
+			margin-right: calc( #{ -1 * grid-item( 2, 8 ) } + .75rem );
+		}
+	}
+
+}

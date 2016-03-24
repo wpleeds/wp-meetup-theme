@@ -1,0 +1,50 @@
+.entry-list {
+
+	@extend .grid;
+	@extend .grid-centered;
+
+	.entry {
+
+		@extend .grid-item;
+		flex: 0 0 100%;
+
+		@media #{ $media-lg } {
+			flex: 0 0 grid-item( 8 );
+		}
+
+		border-bottom: 3px solid $color-border-lt;
+		padding-bottom: .75rem;
+		margin-bottom: 1.5rem;
+
+		&:last-child {
+			border-bottom: none;
+			margin-bottom: 0;
+		}
+
+	}
+
+}
+
+.entry-single {
+
+	@extend .grid;
+	@extend .grid-centered;
+
+	.entry {
+
+		@extend .grid-item;
+		flex: 0 0 100%;
+
+		@media #{ $media-lg } {
+			flex: 0 0 grid-item( 8 );
+		}
+	}
+
+}
+
+.entry {
+	.entry-meta {
+		display: block;
+		margin: -.75rem 0 1.5rem;
+	}
+}

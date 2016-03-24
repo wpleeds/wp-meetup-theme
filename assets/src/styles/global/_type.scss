@@ -1,0 +1,198 @@
+@import "_type-mixins.scss";
+
+html {
+
+	font-family: $font-family-base;
+	font-size:   18px;
+	line-height: 1.5;
+	color:       #444;
+	word-wrap:   break-word;
+
+	@media all and (max-width: 800px ) {
+		font-size: 16px;
+	}
+
+}
+
+p {
+	margin: .75rem auto;
+	&:empty { display: none; }
+}
+
+ul,
+ol,
+dl,
+address {
+	margin: 0 .75rem .75rem .75rem;
+}
+
+li ul,
+li ol {
+	margin: 1.5rem auto;
+}
+
+dl,
+dd {
+	margin: .75rem auto;
+}
+
+dt {
+	font-weight: bold;
+}
+
+.heading,
+h1, h2, h3,
+h4, h5, h6 {
+
+	font-weight: 300;
+	font-family: $font-family-heading;
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+}
+
+h1, .h1	 {
+	@include font-xxl;
+}
+
+h2, .h2    {
+	@include font-xl;
+}
+
+h3, .h3   {
+	@include font-lg;
+}
+
+h4, .h4   {
+	@include font-md;
+}
+
+h5, .h5 {
+	@include font-std;
+}
+
+h6, .h6,
+small, .small {
+	@include font-sm;
+}
+
+/** Remove margin on top of first heading to fix excess whitespace. **/
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child {
+	margin-top: 0;
+}
+
+small {
+	@include font-sm;
+}
+
+strong,
+b {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+
+blockquote,
+.lead-text {
+
+	@include font-lg;
+
+	margin-left: $grid-gutter;
+	margin-right: $grid-gutter;
+
+	font-style: italic;
+	font-weight: 300;
+
+}
+
+blockquote {
+
+	padding-left: 1.5rem;
+	margin-left: 1.5rem;
+	border-left: 1px solid $color-border-lt;
+
+	p {
+		font-size: 1em;
+		margin-bottom: .75rem;
+	}
+
+}
+
+pre,
+code,
+kbd,
+tt,
+samp {
+	font-family: monospace, sans-serif;
+}
+
+pre {
+	padding: .75rem 20px;
+	margin-bottom:  .75rem;
+	white-space: pre;
+	white-space: pre-wrap; /* white-space: pre-line; CSS 3 (and 2.1 as well, actually) */
+	word-wrap: break-word;
+}
+
+ins {
+	background-color: #ff9;
+	color: #000;
+	text-decoration:none;
+}
+
+mark {
+	background-color: #ff9;
+	color: #000;
+	font-style:italic;
+	font-weight:bold;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title],
+acronym[title] {
+	border-bottom:1px dotted;
+	cursor:help;
+}
+
+sup {
+	font-size: .5em;
+	vertical-align: top;
+}
+
+sub {
+	font-size: .5em;
+	vertical-align: bottom;
+}
+
+/**
+ * Tables
+ */
+
+caption {
+	margin-bottom:0.75em;
+	font-weight: bold;
+}
+
+small,
+nav,
+.site-footer {
+	@include font-sm;
+	color: #666;
+}
+
+hr {
+	border-bottom: 1px solid $color-border-lt;
+	border-width: 0 0 1px 0;
+	margin: 0 0 $base-line-height 0;
+}

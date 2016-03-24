@@ -1,0 +1,25 @@
+{
+  "name": "wpleeds",
+  "version": "1.0.0",
+  "description": "WP Leeds Theme",
+  "main": "index.php",
+  "author": "matth_eu",
+  "license": "GPL-2.0",
+  "private": true,
+  "dependencies": {
+    "imports-loader": "^0.6.5",
+    "jquery": "^2.2.1",
+    "packery": "^2.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.4",
+    "gulp": "^3.9.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-postcss": "^6.1.0",
+    "gulp-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-watch": "^4.3.5",
+    "underscore": "^1.8.3",
+    "webpack": "^1.12.2"
+  }
+}

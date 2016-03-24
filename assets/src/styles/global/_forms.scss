@@ -1,0 +1,36 @@
+/**
+ * 5.0 - Forms
+ */
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="number"],
+textarea {
+
+	box-sizing: border-box;
+	background: #F3F3F3;
+	box-shadow: 0 3px 0 #DBDBDB inset;
+	border: 1px solid #BBB;
+	border: none;
+	border-radius: 0;
+	color: #666;
+	padding: .75rem;
+	width: 100%;
+	margin-bottom: .75rem;
+
+	&::placeholder {
+		color: #999;
+	}
+
+	&:focus {
+		outline: none;
+		box-shadow:  0 0 0 3px #DBDBDB inset;
+		background: #F6F6F6;
+	}
+}
+
+

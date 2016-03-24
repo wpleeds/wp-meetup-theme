@@ -1,0 +1,41 @@
+.primary-nav {
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: #333;
+	color: white;
+	padding: .75rem 0;
+	z-index: 100;
+	text-align: center;
+
+	&:after {
+		content: ' ';
+		display: block;
+		left: 0;
+		right: 0;
+		top: auto;
+		background: rgba(0,0,0,0.2);
+		bottom: -3px;
+		margin: 0;
+		position: absolute;
+		height: 3px;
+	}
+
+	body.admin-bar & {
+
+		top: 32px;
+
+		// Media query as used by WordPress for admin bar.
+		@media screen and (max-width: 782px) {
+			top: 46px;
+		}
+
+	}
+
+}
+
+body.has-primary-nav {
+	padding-top: 3rem;
+}

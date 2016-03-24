@@ -1,0 +1,29 @@
+<?php
+/**
+ * The template for displaying the footer.
+ *
+ * Contains the closing of the #content div and all content after.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package wpleeds-theme
+ *
+ */
+
+namespace WPLeeds;
+
+?>
+
+	<footer class="site-footer container grid">
+		<?php dynamic_sidebar( 'sidebar-footer' ); ?>
+	</footer>
+
+	<?php wp_footer(); ?>
+
+	<br />
+	<br />
+	<br />
+
+</body>
+</html>
+

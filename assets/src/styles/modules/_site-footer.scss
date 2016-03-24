@@ -1,0 +1,24 @@
+.site-footer {
+
+	margin-top: 1.5rem;
+	padding-top: 3rem;
+	position: relative;
+
+	&:before {
+		content: ' ';
+		display: block;
+		position: absolute;
+		border-top: 3px solid $color-border-lt;
+		top: 0;
+		left: 25%;
+		right: 25%;
+	}
+
+	.widget {
+		box-sizing: border-box;
+		flex: 0 0 33.333%;
+		padding: 0 #{ $grid-gutter / 2 };
+		margin-bottom: 1.5rem;
+	}
+
+}

@@ -1,0 +1,24 @@
+.nav {
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	> li,
+	> ul > li {
+		display: inline-block;
+		margin: 0 .75rem;
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	&.nav-centered {
+		text-align: center;
+	}
+
+}

@@ -1,0 +1,41 @@
+.btn,
+.button {
+
+	padding: .75rem 1.5rem;
+	border-radius: 0;
+	background: $color-btn-base;
+	text-decoration: none;
+	border: 1px solid #BBB;
+	border: none;
+	box-shadow: 0 -3px 0 rgba(0,0,0,0.1) inset;
+
+	&:hover,
+	&:focus {
+		background: saturate( lighten( $color-btn-base, 5 ), 10 );
+		outline: none;
+	}
+
+	&.btn-primary {
+		background: $color-btn-primary;
+		color: #333;
+		&:hover,
+		&:focus {
+			background: saturate( lighten( $color-btn-primary, 5 ), 10 );
+		}
+	}
+
+	&.btn-white {
+		background: rgba(255,255,255,0.9);
+		color: #333;
+
+		&:hover,
+		&:focus {
+			background: rgba(255,255,255,1);
+		}
+	}
+
+}
+
+.btn-container {
+	margin: 1.5rem auto;
+}
