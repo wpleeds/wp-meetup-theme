@@ -16,9 +16,13 @@
 
 	.widget {
 		box-sizing: border-box;
-		flex: 0 0 33.333%;
+		width: 100%;
 		padding: 0 #{ $grid-gutter / 2 };
 		margin-bottom: 1.5rem;
+
+		@media #{ $media-md } {
+			flex: 0 0 33.333%;
+		}
 	}
 
 }

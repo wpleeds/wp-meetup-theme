@@ -20,10 +20,6 @@ namespace WPLeeds;
 
 	<?php wp_footer(); ?>
 
-	<br />
-	<br />
-	<br />
-
 </body>
 </html>
 
