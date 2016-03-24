@@ -18,7 +18,7 @@ namespace WPLeeds;
 	</h2>
 
 	<small class="entry-meta">
-		<?php the_date( 'jS F, H:i' ); ?> | <?php the_author_posts_link(); ?>
+		<?php the_date( 'jS F Y, H:i' ); ?> | <?php the_author_posts_link(); ?>
 	</small>
 
 	<div class="post-content">
