@@ -43,7 +43,7 @@ while ( $events->have_posts() ) :
 					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 				</h2>
 
-				<p><?php Events\the_event_date( 'jS F, H:i' ); ?> @ <?php Events\the_event_location(); ?></p>
+				<p><?php Events\the_event_date( 'jS F Y, H:i' ); ?> @ <?php Events\the_event_location(); ?></p>
 
 				<?php the_excerpt(); ?>
 

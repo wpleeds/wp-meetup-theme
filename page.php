@@ -1,6 +1,6 @@
 <?php
 /**
- * The single page template file.
+ * The Single template file.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -22,10 +22,6 @@ get_header();
 		<div class="entry">
 
 			<h2><?php the_title(); ?></h2>
-
-			<small class="entry-meta">
-				<?php the_date( 'jS F Y, H:i' ); ?> | <?php the_author_posts_link(); ?>
-			</small>
 
 			<div class="post-content">
 				<?php the_content(); ?>
