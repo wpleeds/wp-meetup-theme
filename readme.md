@@ -8,7 +8,7 @@ The theme uses gulp to run various tasks. This includes compiling CSS, bundling 
 
 * Theme styles use SCSS and are stored in `assets/src/styles`.
 * Theme JavaScript files are in `assets/src/scripts`. Webpack is used to bundle theme.js.
-* Theme Images files are in `assets/src/scripts`.
+* Theme Images files are in `assets/src/images`.
 * Compiled/proccessed are be kept in `assets/dist`.
 * You should never include files from `assets/src` directly within the theme.
 
