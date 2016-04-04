@@ -44,6 +44,8 @@ get_header();
 
 			<?php the_content(); ?>
 
+			<?php get_template_part( 'parts/entry-taxonomies' ); ?>
+
 		</div>
 
 

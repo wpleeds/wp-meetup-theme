@@ -1,11 +1,14 @@
+<?php
 
-<?php echo $args['before_widget']; ?>
+echo $args['before_widget']; // xss ok
 
-<?php if ( ! empty( $instance['title'] ) ) : ?>
-	<?php echo $args['before_title']; ?>
-		<?php echo esc_html( $instance['title'] ); ?>
-	<?php echo $args['after_title']; ?>
-<?php endif; ?>
+if ( ! empty( $instance['title'] ) ) {
+	echo $args['before_title']; // xss ok
+	echo esc_html( $instance['title'] );
+	echo $args['after_title']; // xss ok
+}
+
+?>
 
 <div class="wpmeetup-contact">
 
@@ -35,4 +38,4 @@
 
 </div>
 
-<?php echo $args['after_widget']; ?>
+<?php echo $args['after_widget']; // xss ok ?>

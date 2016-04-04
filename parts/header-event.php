@@ -9,16 +9,8 @@ namespace WPMeetup;
 
 use WP_Query;
 
-$events = new WP_Query( [
-	'post_type'      => 'wpmeetup_event',
-	'posts_per_page' => 1,
-	'no_found_rows'  => true,
-	'orderby'        => 'meta_value_num',
-	'meta_key'       => 'event-date',
-	'order'          => 'ASC',
-	'meta_compare'   => '>',
-	'meta_value'     => time(),
-] );
+// Query future events.
+$events = Events\query_future_events();
 
 while ( $events->have_posts() ) :
 

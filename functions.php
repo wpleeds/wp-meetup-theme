@@ -17,7 +17,6 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_scripts' );
 add_action( 'widgets_init',       __NAMESPACE__ . '\\widgets_init' );
 add_filter( 'body_class',         __NAMESPACE__ . '\\filter_body_class' );
 add_filter( 'script_loader_tag',  __NAMESPACE__ . '\\filter_script_loader_tag', 10, 3 );
-add_action( 'pre_get_posts',      __NAMESPACE__ . '\\filter_events_query' );
 add_action( 'admin_menu',         __NAMESPACE__ . '\\modify_admin_menu' );
 
 /**
@@ -144,15 +143,5 @@ function filter_body_class( $classes ) {
 	}
 
 	return $classes;
-
-}
-
-function filter_events_query( $query ) {
-
-	if ( $query->is_main_query() && $query->get( 'post_type' ) ) {
-		$query->set( 'orderby', 'meta_value_num' );
-		$query->set( 'meta_key', 'event-date' );
-		$query->set( 'order', 'DESC' );
-	}
 
 }
