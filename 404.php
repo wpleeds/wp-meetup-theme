@@ -15,20 +15,13 @@ get_header();
 
 <div class="container entry-single">
 
-	<?php while ( have_posts() ) : ?>
+	<div class="entry">
 
-		<?php the_post(); ?>
+		<h2><?php esc_html_e( 'Page not found', 'wpmeetup' ) ?></h2>
+		<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'twentythirteen' ); ?></p>
+		<?php get_search_form(); ?>
 
-		<div class="entry">
-
-			<h2><?php the_title(); ?></h2>
-
-			<div class="post-content">
-				<?php the_content(); ?>
-			</div>
-		</div>
-
-	<?php endwhile; ?>
+	</div>
 
 </div>
 

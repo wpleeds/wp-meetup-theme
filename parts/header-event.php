@@ -48,7 +48,13 @@ while ( $events->have_posts() ) :
 					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 				</h2>
 
-				<p><?php Events\the_event_date( 'jS F Y, H:i' ); ?> @ <?php Events\the_event_location(); ?></p>
+				<p>
+					<?php Events\the_event_date( 'jS F Y, H:i' ); ?>
+
+					<?php if ( ! empty( Events\get_event_location() ) ) : ?>
+						@ <?php Events\the_event_location(); ?>
+					<?php endif; ?>
+				</p>
 
 				<?php the_excerpt(); ?>
 
