@@ -6,6 +6,7 @@ const postcss       = require( 'gulp-postcss' );
 const autoprefixer  = require( 'autoprefixer' );
 const sass          = require( 'gulp-sass' );
 const imagemin      = require( 'gulp-imagemin' );
+const svg2png       = require( 'gulp-svg2png' );
 
 // All the configs for different tasks.
 const config = {
@@ -22,7 +23,15 @@ const config = {
 	},
 	postcss: [
 		autoprefixer( { browsers: ['last 3 versions'] } ),
-	]
+	],
+	iconify: {
+		src:           './assets/src/images/**/*.svg',
+		pngOutput:     './assets/dist/images',
+		scssOutput:    './assets/src/styles/global/icons',
+		cssOutput:     false,
+		defaultWidth:  '200px',
+		defaultHeight: '200px',
+	}
 };
 
 gulp.task( 'styles', () => {
@@ -51,8 +60,16 @@ gulp.task( 'js', function( callback ) {
 
 gulp.task( 'images', () => {
 	return gulp.src( './assets/src/images/**/*.{jpg,jpeg,png}')
-        .pipe( imagemin( config.imagemin ) )
-        .pipe( gulp.dest( 'assets/dist/images' ) );
+		.pipe( imagemin( config.imagemin ) )
+		.pipe( gulp.dest( 'assets/dist/images' ) );
+} );
+
+gulp.task( 'svg', () => {
+	return gulp.src( './assets/src/images/**/*.svg')
+		.pipe( imagemin( config.imagemin ) )
+		.pipe( gulp.dest( './assets/dist/images' ) )
+		.pipe( svg2png() )
+		.pipe( gulp.dest( './assets/dist/images' ) );
 } );
 
 gulp.task('watch', function() {
@@ -61,4 +78,4 @@ gulp.task('watch', function() {
 });
 
 // Tasks
-gulp.task( 'default', [ 'styles', 'js', 'images' ] );
+gulp.task( 'default', [ 'styles', 'js', 'images', 'svg' ] );

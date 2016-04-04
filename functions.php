@@ -9,13 +9,13 @@
 
 namespace WPLeeds;
 
+require_once( __DIR__ . '/inc/events/events.php' );
+
 add_action( 'after_setup_theme',  __NAMESPACE__ . '\\setup' );
 add_action( 'after_setup_theme',  __NAMESPACE__ . '\\content_width', 0 );
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_scripts' );
 add_action( 'widgets_init',       __NAMESPACE__ . '\\widgets_init' );
 add_filter( 'body_class',         __NAMESPACE__ . '\\filter_body_class' );
-
-require_once( __DIR__ . '/inc/events/events.php' );
 
 /**
  * Set up the theme.
@@ -84,6 +84,11 @@ function content_width() {
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function widgets_init() {
+
+	require_once( __DIR__ . '/inc/widgets/class-social.php' );
+
+	register_widget( __NAMESPACE__ . '\\Widgets\Social' );
+
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer', '_s' ),
 		'id'            => 'sidebar-footer',
@@ -93,6 +98,7 @@ function widgets_init() {
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
+
 }
 
 /**
@@ -119,11 +125,11 @@ add_filter( 'script_loader_tag', function( $tag, $handle, $src ) {
 		'wpleeds'
 	];
 
-    if ( in_array( $handle, $async_scripts, true ) ) {
-        return str_replace( ' src', ' async="async" src', $tag );
-    }
+	if ( in_array( $handle, $async_scripts, true ) ) {
+		return str_replace( ' src', ' async="async" src', $tag );
+	}
 
-    return $tag;
+	return $tag;
 
 }, 10, 3 );
 
@@ -137,3 +143,13 @@ function filter_body_class( $classes ) {
 	return $classes;
 
 }
+
+add_action( 'pre_get_posts', function( $query ) {
+
+	if ( $query->is_main_query() && $query->get( 'post_type' ) ) {
+		$query->set( 'orderby', 'meta_value_num' );
+		$query->set( 'meta_key', 'event-date' );
+		$query->set( 'order', 'DESC' );
+	}
+
+} );

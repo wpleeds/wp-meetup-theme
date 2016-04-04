@@ -29,7 +29,7 @@ function register_post_type() {
 	$args = [
 		'labels'             => $labels,
 		'public'             => true,
-		'rewrite'            => array( 'slug' => 'event' ),
+		'rewrite'            => array( 'slug' => 'events' ),
 		'capability_type'    => 'post',
 		'has_archive'        => true,
 		'hierarchical'       => true,
@@ -55,7 +55,6 @@ function cmb_meta_boxes( array $meta_boxes ) {
 			[ 'id' => 'event-ticket-link', 'name' => 'Event Ticket Link', 'type' => 'url' ],
 		]
 	);
-
 
 	return $meta_boxes;
 
