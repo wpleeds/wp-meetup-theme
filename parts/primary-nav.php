@@ -2,10 +2,10 @@
 /**
  * Primary Nav.
  *
- * @package wpleeds-theme
+ * @package wpmeetup-theme
  */
 
-namespace WPLeeds;
+namespace WPMeetup;
 
 if ( has_nav_menu( 'primary' ) ) {
 

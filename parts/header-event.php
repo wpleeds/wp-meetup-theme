@@ -2,23 +2,15 @@
 /**
  * Header - latest event template.
  *
- * @package wpleeds-theme
+ * @package wpmeetup-theme
  */
 
-namespace WPLeeds;
+namespace WPMeetup;
 
 use WP_Query;
 
-$events = new WP_Query( [
-	'post_type'      => 'wpleeds_event',
-	'posts_per_page' => 1,
-	'no_found_rows'  => true,
-	'orderby'        => 'meta_value_num',
-	'meta_key'       => 'event-date',
-	'order'          => 'ASC',
-	'meta_compare'   => '>',
-	'meta_value'     => time(),
-] );
+// Query future events.
+$events = Events\query_future_events();
 
 while ( $events->have_posts() ) :
 
@@ -48,7 +40,13 @@ while ( $events->have_posts() ) :
 					<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 				</h2>
 
-				<p><?php Events\the_event_date( 'jS F Y, H:i' ); ?> @ <?php Events\the_event_location(); ?></p>
+				<p>
+					<?php Events\the_event_date( 'jS F Y, H:i' ); ?>
+
+					<?php if ( ! empty( Events\get_event_location() ) ) : ?>
+						@ <?php Events\the_event_location(); ?>
+					<?php endif; ?>
+				</p>
 
 				<?php the_excerpt(); ?>
 

@@ -2,10 +2,10 @@
 /**
  * Single entry in entry list template. Used in archive templates.
  *
- * @package wpleeds-theme
+ * @package wpmeetup-theme
  */
 
-namespace WPLeeds;
+namespace WPMeetup;
 
 ?>
 

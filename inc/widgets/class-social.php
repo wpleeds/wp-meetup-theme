@@ -1,6 +1,6 @@
 <?php
 
-namespace WPLeeds\Widgets;
+namespace WPMeetup\Widgets;
 
 use WP_Widget;
 
@@ -12,11 +12,11 @@ class Social extends WP_Widget {
 	public function __construct() {
 
 		$widget_ops = array(
-			'classname' => 'wpleeds_social',
+			'classname' => 'wpmeetup_social',
 			'description' => 'Display contnact links.',
 		);
 
-		parent::__construct( 'wpleeds_social', 'WPLeeds Social', $widget_ops );
+		parent::__construct( 'wpmeetup_social', 'WPMeetup Social', $widget_ops );
 
 	}
 
@@ -30,7 +30,7 @@ class Social extends WP_Widget {
 	 */
 	private function parse_args( array $args ) {
 		return wp_parse_args( $args, [
-			'title'         => __( 'Social', 'wpleeds' ),
+			'title'         => __( 'Social', 'wpmeetup' ),
 			'twitter_text'  => '',
 			'twitter_link'  => '',
 			'facebook_text' => '',

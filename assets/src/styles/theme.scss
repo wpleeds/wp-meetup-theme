@@ -22,7 +22,7 @@ $font-size-delta:     1.25rem;
 $color-header:        #21759B;
 $color-btn-base:      #DDD;
 $color-btn-primary:   #8fd86b;
-$color-btn-secondary: #8DD057;
+$color-btn-secondary: #21759B;
 $color-border-lt:     #DDD;
 
 
@@ -46,6 +46,11 @@ $color-border-lt:     #DDD;
 @import "modules/_entry-event.scss";
 @import "modules/_gallery.scss";
 @import "modules/_widget-social.scss";
+@import "modules/_search-form.scss";
+
+html, body {
+	background: #FFF;
+}
 
 .container {
 	margin-left: auto;

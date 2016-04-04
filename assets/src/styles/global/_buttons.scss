@@ -10,6 +10,7 @@
 	box-shadow: 0 -3px 0 rgba(0,0,0,0.1) inset;
 	box-sizing: border-box;
 	text-align: center;
+	color: #333;
 
 	&:hover,
 	&:focus {
@@ -23,6 +24,15 @@
 		&:hover,
 		&:focus {
 			background: saturate( lighten( $color-btn-primary, 5 ), 10 );
+		}
+	}
+
+	&.btn-secondary {
+		background: $color-btn-secondary;
+		color: #FFF;
+		&:hover,
+		&:focus {
+			background: saturate( lighten( $color-btn-secondary, 5 ), 10 );
 		}
 	}
 

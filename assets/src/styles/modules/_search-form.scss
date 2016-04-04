@@ -1,0 +1,18 @@
+.search-form {
+
+	padding-right: 160px;
+	overflow: hidden;
+	clear: both;
+
+	input[type=search] {
+		float: left;
+		width: 100%;
+	}
+
+	.search-submit {
+		margin-right: -160px;
+		width: calc( 160px - .75rem );
+		float: right;
+	}
+
+}

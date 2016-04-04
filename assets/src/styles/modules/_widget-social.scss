@@ -1,18 +1,26 @@
-.wpleeds-contact {
+.wpmeetup-contact {
 
 	display: flex;
 	flex-wrap: wrap;
+	margin: 0 -.75rem;
 
-	.wpleeds-contact-item {
+	.wpmeetup-contact-item {
 
-		flex: 0 0 50%;
+		flex: 0 0 calc( 100% - 1.5rem );
+		margin: 0 .75rem 1.5rem;
+
+		@media #{ $media-lg } {
+			flex: 0 0 calc( 50% - 1.5rem );
+		}
 
 		 a {
 
+			@extend .btn;
+
+			text-align: left;
 			display: block;
-			color: inherit;
 	 		text-decoration: none;
-			padding: .75rem 0 .75rem calc( .75rem + 32px );
+			padding: .75rem 0 .75rem calc( 1.5rem + 32px );
 			line-height: 1.5rem;
 
 			&:before {
@@ -29,18 +37,30 @@
 			}
 		}
 
-		&.wpleeds-contact-item-twitter a:before {
+		&.wpmeetup-contact-item-twitter a:before {
 			@extend .icon-twitter;
 		}
 
-		&.wpleeds-contact-item-facebook a:before {
+		&.wpmeetup-contact-item-facebook a:before {
 			@extend .icon-facebook;
 		}
 
-		&.wpleeds-contact-item-email a:before {
+		&.wpmeetup-contact-item-email a:before {
 			@extend .icon-mail;
 		}
 
 	}
 
+}
+
+/**
+ * Bit of a hack to nicely align our form widget with our social widget.
+ */
+@media #{ $media-lg } {
+	.wpmeetup-contact {
+		margin-top: 2.25rem;
+		.wpmeetup-contact-item {
+			margin-bottom: 2.25rem;
+		}
+	}
 }

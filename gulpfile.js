@@ -5,13 +5,14 @@ const watch         = require( 'gulp-watch' );
 const postcss       = require( 'gulp-postcss' );
 const autoprefixer  = require( 'autoprefixer' );
 const sass          = require( 'gulp-sass' );
+const newer         = require( 'gulp-newer' );
 const imagemin      = require( 'gulp-imagemin' );
 const svg2png       = require( 'gulp-svg2png' );
 
 // All the configs for different tasks.
 const config = {
 	sass: {
-		style: 'compressed'
+		outputStyle: 'compressed'
 	},
 	webpack: require( './webpack.config.js' ),
 	imagemin: {
@@ -24,16 +25,9 @@ const config = {
 	postcss: [
 		autoprefixer( { browsers: ['last 3 versions'] } ),
 	],
-	iconify: {
-		src:           './assets/src/images/**/*.svg',
-		pngOutput:     './assets/dist/images',
-		scssOutput:    './assets/src/styles/global/icons',
-		cssOutput:     false,
-		defaultWidth:  '200px',
-		defaultHeight: '200px',
-	}
 };
 
+// Compile and minify CSS.
 gulp.task( 'styles', () => {
 	gulp.src( './assets/src/styles/*.scss' )
 		.pipe( sourcemaps.init() )
@@ -43,6 +37,7 @@ gulp.task( 'styles', () => {
 		.pipe( gulp.dest('./assets/dist/styles') );
 });
 
+// Bundle JS.
 gulp.task( 'js', function( callback ) {
 	webpack(
 		config.webpack,
@@ -58,20 +53,26 @@ gulp.task( 'js', function( callback ) {
 	);
 });
 
+// Minify images.
 gulp.task( 'images', () => {
 	return gulp.src( './assets/src/images/**/*.{jpg,jpeg,png}')
+		.pipe( newer( 'assets/dist/images' ) )
 		.pipe( imagemin( config.imagemin ) )
 		.pipe( gulp.dest( 'assets/dist/images' ) );
 } );
 
+// Minify SVG and write to dest.
+// Then convert SVG to PNG and write to dest.
 gulp.task( 'svg', () => {
 	return gulp.src( './assets/src/images/**/*.svg')
+		.pipe( newer( 'assets/dist/images' ) )
 		.pipe( imagemin( config.imagemin ) )
 		.pipe( gulp.dest( './assets/dist/images' ) )
-		.pipe( svg2png() )
+		.pipe( svg2png( 2.0, false, 2 ) )
 		.pipe( gulp.dest( './assets/dist/images' ) );
 } );
 
+// Watch for changes in JS/CSS.
 gulp.task('watch', function() {
 	gulp.watch( 'assets/src/styles/**/*.scss', ['styles'] );
 	gulp.watch( ['assets/src/scripts/**/*.js'], ['js'] );

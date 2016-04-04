@@ -9,10 +9,10 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package wpleeds-theme
+ * @package wpmeetup-theme
  */
 
-namespace WPLeeds;
+namespace WPMeetup;
 
 get_header();
 
@@ -20,11 +20,13 @@ get_header();
 
 <div class="container entry-list">
 
-	<?php
-
-	while ( have_posts() ) {
-		the_post();
-		get_template_part( 'parts/index-entry', get_post_type() );
+	<?php if ( have_posts() ) {
+		while ( have_posts() ) {
+			the_post();
+			get_template_part( 'parts/index-entry', get_post_type() );
+		}
+	} else {
+		get_template_part( 'parts/index-none' );
 	}
 
 	?>

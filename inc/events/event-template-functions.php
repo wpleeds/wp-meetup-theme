@@ -1,6 +1,8 @@
 <?php
 
-namespace WPLeeds\Events;
+namespace WPMeetup\Events;
+
+use WP_Query;
 
 /**
  * Get event date.
@@ -72,4 +74,27 @@ function is_future_event( $post_id = null ) {
 	$post_id  = $post_id ?: get_the_ID();
 	$date = get_post_meta( $post_id, 'event-date', true );
 	return $date > time();
+}
+
+/**
+ * Do a query of future events.
+ *
+ * @param  array $args Custom query args. Note defaults to a standard query of all future events.
+ * @return WP_Query future events.
+ */
+function query_future_events( array $args = [] ) {
+
+	$args = wp_parse_args( $args, [
+		'post_type'      => 'wpmeetup_event',
+		'posts_per_page' => 1,
+		'no_found_rows'  => true,
+		'orderby'        => 'meta_value_num',
+		'meta_key'       => 'event-date',
+		'order'          => 'ASC',
+		'meta_compare'   => '>',
+		'meta_value'     => time(),
+	] );
+
+	return new WP_Query( $args );
+
 }
