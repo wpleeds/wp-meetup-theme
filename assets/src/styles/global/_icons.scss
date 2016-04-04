@@ -1,0 +1,33 @@
+$genericons: 'facebook', 'twitter', 'mail';
+
+/**
+ * Abstract icon.
+ * Should be extended.
+ */
+.icon {
+	width: 32px;
+	height: 32px;
+	line-height: 32px;
+	background-size: 32px 32px;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	display: inline-block;
+	margin: 0;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+@each $icon in $genericons {
+
+	.icon-#{ $icon } {
+
+		background-image: url( '../images/genericons/grey/#{ $icon }.svg' );
+
+		// If Modernizr is active, adds fallback pngs.
+		.no-svg & {
+			background-image: url( '../images/genericons/grey/#{ $icon }.png' );
+		}
+
+	}
+}

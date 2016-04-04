@@ -29,6 +29,7 @@ $color-border-lt:     #DDD;
 @import url( 'http://fonts.googleapis.com/css?family=Open+Sans' );
 
 @import "global/_normalize.scss";
+@import "global/_icons.scss";
 @import "global/_type.scss";
 @import "global/_tables.scss";
 @import "global/_grid.scss";
@@ -44,6 +45,7 @@ $color-border-lt:     #DDD;
 @import "modules/_entries.scss";
 @import "modules/_entry-event.scss";
 @import "modules/_gallery.scss";
+@import "modules/_widget-social.scss";
 
 .container {
 	margin-left: auto;
