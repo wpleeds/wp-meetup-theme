@@ -119,11 +119,11 @@ add_filter( 'script_loader_tag', function( $tag, $handle, $src ) {
 		'wpleeds'
 	];
 
-    if ( in_array( $handle, $async_scripts, true ) ) {
-        return str_replace( ' src', ' async="async" src', $tag );
-    }
+	if ( in_array( $handle, $async_scripts, true ) ) {
+		return str_replace( ' src', ' async="async" src', $tag );
+	}
 
-    return $tag;
+	return $tag;
 
 }, 10, 3 );
 
@@ -137,3 +137,13 @@ function filter_body_class( $classes ) {
 	return $classes;
 
 }
+
+add_action( 'pre_get_posts', function( $query ) {
+
+	if ( $query->is_main_query() && $query->get( 'post_type' ) ) {
+		$query->set( 'orderby', 'meta_value_num' );
+		$query->set( 'meta_key', 'event-date' );
+		$query->set( 'order', 'DESC' );
+	}
+
+} );

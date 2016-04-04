@@ -24,7 +24,7 @@ get_header();
 
 	while ( have_posts() ) {
 		the_post();
-		get_template_part( 'parts/index-entry' );
+		get_template_part( 'parts/index-entry', get_post_type() );
 	}
 
 	?>

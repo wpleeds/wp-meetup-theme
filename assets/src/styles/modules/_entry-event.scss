@@ -1,0 +1,30 @@
+.entry-list .entry.entry-event {
+
+	display: flex;
+	flex-wrap:nowrap;
+	align-items: flex-start;
+
+	padding-left: 0;
+	padding-right: 0;
+
+	.entry-event-date,
+	.entry-event-content {
+		padding: 0 #{ $grid-gutter/2 };
+		box-sizing: border-box;
+	}
+
+	.entry-event-date {
+		flex: 0 0 #{ grid-item( 2, 8 ) };
+		@extend h3;
+		float: left;
+	}
+
+	.entry-event-content {
+		flex: 0 0 #{ grid-item( 6, 8 ) };
+	}
+
+	.entry-title {
+		margin-bottom: .75rem;
+	}
+
+}

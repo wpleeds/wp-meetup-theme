@@ -13,6 +13,11 @@ $events = new WP_Query( [
 	'post_type'      => 'wpleeds_event',
 	'posts_per_page' => 1,
 	'no_found_rows'  => true,
+	'orderby'        => 'meta_value_num',
+	'meta_key'       => 'event-date',
+	'order'          => 'ASC',
+	'meta_compare'   => '>',
+	'meta_value'     => time(),
 ] );
 
 while ( $events->have_posts() ) :

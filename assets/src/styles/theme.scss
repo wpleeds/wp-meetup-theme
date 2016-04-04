@@ -42,6 +42,7 @@ $color-border-lt:     #DDD;
 @import "modules/_site-footer.scss";
 @import "modules/_primary-nav.scss";
 @import "modules/_entries.scss";
+@import "modules/_entry-event.scss";
 @import "modules/_gallery.scss";
 
 .container {
@@ -50,5 +51,3 @@ $color-border-lt:     #DDD;
 	max-width: 1200px;
 	position: relative;
 }
-
-
