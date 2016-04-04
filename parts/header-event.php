@@ -2,15 +2,15 @@
 /**
  * Header - latest event template.
  *
- * @package wpleeds-theme
+ * @package wpmeetup-theme
  */
 
-namespace WPLeeds;
+namespace WPMeetup;
 
 use WP_Query;
 
 $events = new WP_Query( [
-	'post_type'      => 'wpleeds_event',
+	'post_type'      => 'wpmeetup_event',
 	'posts_per_page' => 1,
 	'no_found_rows'  => true,
 	'orderby'        => 'meta_value_num',

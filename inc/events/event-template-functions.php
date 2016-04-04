@@ -1,6 +1,6 @@
 <?php
 
-namespace WPLeeds\Events;
+namespace WPMeetup\Events;
 
 /**
  * Get event date.

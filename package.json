@@ -1,7 +1,7 @@
 {
-  "name": "wpleeds",
+  "name": "wpmeetup",
   "version": "1.0.0",
-  "description": "WP Leeds Theme",
+  "description": "WP Meetup Theme",
   "main": "index.php",
   "author": "matth_eu",
   "license": "GPL-2.0",

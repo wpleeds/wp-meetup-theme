@@ -1,10 +1,10 @@
-.wpleeds-contact {
+.wpmeetup-contact {
 
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0 -.75rem;
 
-	.wpleeds-contact-item {
+	.wpmeetup-contact-item {
 
 		flex: 0 0 calc( 100% - 1.5rem );
 		margin: 0 .75rem 1.5rem;
@@ -37,15 +37,15 @@
 			}
 		}
 
-		&.wpleeds-contact-item-twitter a:before {
+		&.wpmeetup-contact-item-twitter a:before {
 			@extend .icon-twitter;
 		}
 
-		&.wpleeds-contact-item-facebook a:before {
+		&.wpmeetup-contact-item-facebook a:before {
 			@extend .icon-facebook;
 		}
 
-		&.wpleeds-contact-item-email a:before {
+		&.wpmeetup-contact-item-email a:before {
 			@extend .icon-mail;
 		}
 
@@ -57,9 +57,9 @@
  * Bit of a hack to nicely align our form widget with our social widget.
  */
 @media #{ $media-lg } {
-	.wpleeds-contact {
+	.wpmeetup-contact {
 		margin-top: 2.25rem;
-		.wpleeds-contact-item {
+		.wpmeetup-contact-item {
 			margin-bottom: 2.25rem;
 		}
 	}

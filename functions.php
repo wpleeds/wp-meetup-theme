@@ -1,13 +1,13 @@
 <?php
 /**
- * wpleeds-theme functions and definitions.
+ * wpmeetup-theme functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package wpleeds-theme
+ * @package wpmeetup-theme
  */
 
-namespace WPLeeds;
+namespace WPMeetup;
 
 require_once( __DIR__ . '/inc/events/events.php' );
 
@@ -16,6 +16,9 @@ add_action( 'after_setup_theme',  __NAMESPACE__ . '\\content_width', 0 );
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_scripts' );
 add_action( 'widgets_init',       __NAMESPACE__ . '\\widgets_init' );
 add_filter( 'body_class',         __NAMESPACE__ . '\\filter_body_class' );
+add_filter( 'script_loader_tag',  __NAMESPACE__ . '\\filter_script_loader_tag', 10, 3 );
+add_action( 'pre_get_posts',      __NAMESPACE__ . '\\filter_events_query' );
+add_action( 'admin_menu',         __NAMESPACE__ . '\\modify_admin_menu' );
 
 /**
  * Set up the theme.
@@ -40,7 +43,7 @@ function setup() {
 	/**
 	 * Register nav menus.
 	 */
-	register_nav_menu( 'primary', esc_html__( 'Main menu', 'wpleeds-theme' ) );
+	register_nav_menu( 'primary', esc_html__( 'Main menu', 'wpmeetup-theme' ) );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -61,9 +64,9 @@ function setup() {
  */
 function enqueue_scripts() {
 
-	// wp_enqueue_script( 'wpleeds', get_stylesheet_directory_uri() . '/assets/dist/scripts/theme.js', [ 'jquery' ], '1.0', true );
+	// wp_enqueue_script( 'wpmeetup', get_stylesheet_directory_uri() . '/assets/dist/scripts/theme.js', [ 'jquery' ], '1.0', true );
 
-	wp_enqueue_style( 'wpleeds', get_stylesheet_directory_uri() . '/assets/dist/styles/theme.css', [], '1.0' );
+	wp_enqueue_style( 'wpmeetup', get_stylesheet_directory_uri() . '/assets/dist/styles/theme.css', [], '1.0' );
 
 }
 
@@ -104,7 +107,7 @@ function widgets_init() {
 /**
  * Move position of media in admin menu.
  */
-add_action( 'admin_menu', function() {
+function modify_admin_menu() {
 
 	global $menu;
 
@@ -114,15 +117,15 @@ add_action( 'admin_menu', function() {
 	$menu[24] = $menu[ $key ];
 	unset( $menu[ $key ] );
 
-} );
+}
 
 /**
  * Make some scripts async.
  */
-add_filter( 'script_loader_tag', function( $tag, $handle, $src ) {
+function filter_script_loader_tag( $tag, $handle, $src ) {
 
 	$async_scripts = [
-		'wpleeds'
+		'wpmeetup'
 	];
 
 	if ( in_array( $handle, $async_scripts, true ) ) {
@@ -131,7 +134,7 @@ add_filter( 'script_loader_tag', function( $tag, $handle, $src ) {
 
 	return $tag;
 
-}, 10, 3 );
+}
 
 
 function filter_body_class( $classes ) {
@@ -144,7 +147,7 @@ function filter_body_class( $classes ) {
 
 }
 
-add_action( 'pre_get_posts', function( $query ) {
+function filter_events_query( $query ) {
 
 	if ( $query->is_main_query() && $query->get( 'post_type' ) ) {
 		$query->set( 'orderby', 'meta_value_num' );
@@ -152,4 +155,4 @@ add_action( 'pre_get_posts', function( $query ) {
 		$query->set( 'order', 'DESC' );
 	}
 
-} );
+}

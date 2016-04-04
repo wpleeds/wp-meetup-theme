@@ -6,10 +6,10 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package wpleeds-theme
+ * @package wpmeetup-theme
  */
 
-namespace WPLeeds;
+namespace WPMeetup;
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>

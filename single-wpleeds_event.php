@@ -1,13 +1,13 @@
 <?php
 /**
- * The Single WPLeeds Event template file.
+ * The Single WPMeetup Event template file.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package wpleeds-theme
+ * @package wpmeetup-theme
  */
 
-namespace WPLeeds;
+namespace WPMeetup;
 
 get_header();
 
