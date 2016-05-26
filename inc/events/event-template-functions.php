@@ -28,7 +28,6 @@ function the_event_date( $format ) {
 	echo esc_html( get_event_date( $format ) );
 }
 
-
 /**
  * Get event location display text.
  *
@@ -37,7 +36,7 @@ function the_event_date( $format ) {
  * @return string Location string.
  */
 function get_event_location( $post_id = null ) {
-	$post_id  = $post_id ?: get_the_ID();
+	$post_id = $post_id ?: get_the_ID();
 	return get_post_meta( $post_id, 'event-location-string', true );
 }
 
@@ -49,6 +48,28 @@ function get_event_location( $post_id = null ) {
  */
 function the_event_location() {
 	echo esc_html( get_event_location() );
+}
+
+/**
+ * Get event location link.
+ *
+ * @param  mixed $post_id  Event Post ID. If null, current global post.
+ *
+ * @return string Location link.
+ */
+function get_event_location_link( $post_id = null ) {
+	$post_id = $post_id ?: get_the_ID();
+	return get_post_meta( $post_id, 'event-location-link', true );
+}
+
+/**
+ * Output the event location link.
+ *
+ * @param  string $format Date format. Passed to PHP date function.
+ * @return null
+ */
+function the_event_location_link() {
+	echo esc_url( get_event_location_link() );
 }
 
 /**
