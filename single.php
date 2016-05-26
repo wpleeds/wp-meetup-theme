@@ -30,6 +30,9 @@ get_header();
 			<div class="post-content">
 				<?php the_content(); ?>
 			</div>
+
+			<?php get_template_part( 'parts/entry-taxonomies' ); ?>
+
 		</div>
 
 	<?php endwhile; ?>
