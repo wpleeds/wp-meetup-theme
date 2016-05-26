@@ -63,6 +63,7 @@ function setup() {
  */
 function enqueue_scripts() {
 
+	// Currently empty. Not loaded.
 	// wp_enqueue_script( 'wpmeetup', get_stylesheet_directory_uri() . '/assets/dist/scripts/theme.js', [ 'jquery' ], '1.0', true );
 
 	wp_enqueue_style( 'wpmeetup', get_stylesheet_directory_uri() . '/assets/dist/styles/theme.css', [], '1.0' );

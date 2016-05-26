@@ -3,6 +3,7 @@
 	@extend .grid;
 	@extend .grid-centered;
 
+	.entries-header,
 	.entry {
 
 		@extend .grid-item;
@@ -46,5 +47,17 @@
 	.entry-meta {
 		display: block;
 		margin: -.75rem 0 1.5rem;
+	}
+}
+
+.entry-list .author-header {
+
+	padding-left: calc( 120px + #{ $grid-gutter } );
+
+	.entries-header-thumb {
+		float: left;
+		width: 120px;
+		margin: 0;
+		margin-left: calc( -120px - #{ $grid-gutter } );
 	}
 }

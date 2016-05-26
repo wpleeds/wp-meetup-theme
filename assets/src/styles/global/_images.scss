@@ -1,6 +1,11 @@
 img {
 	max-width: 100%;
 	height: auto;
+
+	.entry & {
+		margin-top: .75rem;
+		margin-bottom: .75rem;
+	}
 }
 
 .aligncenter {
@@ -23,7 +28,7 @@ img {
 }
 
 .size-large {
-	// width: 100%;
+	width: 100%;
 }
 
 

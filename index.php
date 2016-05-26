@@ -20,6 +20,8 @@ get_header();
 
 <div class="container entry-list">
 
+	<?php get_template_part( 'parts/index-header' ); ?>
+
 	<?php if ( have_posts() ) {
 		while ( have_posts() ) {
 			the_post();

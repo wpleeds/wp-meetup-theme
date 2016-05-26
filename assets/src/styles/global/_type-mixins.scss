@@ -7,13 +7,13 @@
 @mixin font-xl {
 	font-size: $font-size-beta;
 	line-height: $base-line-height * 1.5;
-	margin: 1.5rem auto;
+	margin: .75rem auto;
 }
 
 @mixin font-lg {
 	font-size: $font-size-gamma;
 	line-height: $base-line-height * 1.25;
-	margin: 1.5rem auto;
+	margin: .75rem auto;
 }
 
 @mixin font-md {
