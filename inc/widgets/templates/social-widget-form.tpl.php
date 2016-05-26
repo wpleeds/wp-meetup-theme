@@ -7,6 +7,7 @@
 	<label for="<?php echo esc_attr( $this->get_field_id( 'twitter_text' ) ); ?>"><?php esc_html_e( 'Twitter Text:', 'wpmeetup' ); ?></label>
 	<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'twitter_text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'twitter_text' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['twitter_text'] ); ?>">
 </p>
+
 <p>
 	<label for="<?php echo esc_attr( $this->get_field_id( 'twitter_link' ) ); ?>"><?php esc_html_e( 'Twitter Link:', 'wpmeetup' ); ?></label>
 	<input class="widefat code" id="<?php echo esc_attr( $this->get_field_id( 'twitter_link' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'twitter_link' ) ); ?>" type="text" value="<?php echo esc_url( $instance['twitter_link'] ); ?>">

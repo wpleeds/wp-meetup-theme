@@ -12,7 +12,7 @@ class Social extends WP_Widget {
 	public function __construct() {
 
 		$widget_ops = array(
-			'classname' => 'wpmeetup_social',
+			'classname'   => 'wpmeetup_social',
 			'description' => 'Display contnact links.',
 		);
 
@@ -46,6 +46,11 @@ class Social extends WP_Widget {
 	 * @param array $instance
 	 */
 	public function widget( $args, $instance ) {
+
+		$contact_methods[] = [ 'type' => 'twitter',  'link' => $instance['twitter_link'],  'text' => $instance['twitter_text'] ];
+		$contact_methods[] = [ 'type' => 'facebook', 'link' => $instance['facebook_link'], 'text' => $instance['facebook_text'] ];
+		$contact_methods[] = [ 'type' => 'email',    'link' => $instance['email_link'],    'text' => $instance['email_text'] ];
+
 		include( __DIR__ . '/templates/social-widget-display.tpl.php' );
 	}
 
