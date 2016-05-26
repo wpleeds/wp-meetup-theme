@@ -1,6 +1,6 @@
 <?php
 /**
- * The single page template file.
+ * Front page.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -21,17 +21,20 @@ get_header();
 
 		<div class="entry">
 
-			<h2><?php the_title(); ?></h2>
+			<?php // Don't display page title & meta if is a static page. ?>
+			<?php if ( ! is_page() ) : ?>
 
-			<small class="entry-meta">
-				<?php the_date( 'jS F Y, H:i' ); ?> | <?php the_author_posts_link(); ?>
-			</small>
+				<h2><?php the_title(); ?></h2>
+
+				<small class="entry-meta">
+					<?php the_date( 'jS F Y, H:i' ); ?> | <?php the_author_posts_link(); ?>
+				</small>
+
+			<?php endif; ?>
 
 			<div class="post-content">
 				<?php the_content(); ?>
 			</div>
-
-			<?php get_template_part( 'parts/entry-taxonomies' ); ?>
 
 		</div>
 

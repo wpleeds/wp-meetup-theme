@@ -18,7 +18,7 @@
 		display: block;
 		position: absolute;
 		border-top: 3px solid rgba(255,255,255,0.25);
-		top: 0;
+		top: -2px;
 		left: 25%;
 		right: 25%;
 	}
@@ -47,6 +47,8 @@
 			max-width: 100%;
 			height: auto;
 			vertical-align: top;
+			margin-bottom: 0;
+			margin-top: 0;
 		}
 	}
 
@@ -71,6 +73,11 @@
 		.header-event-content {
 			flex: 0 0 100%;
 		}
+
+		.header-event-content {
+			padding-top: 0;
+		}
+
 	}
 
 }

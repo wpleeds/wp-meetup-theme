@@ -67,7 +67,7 @@ function cmb_meta_boxes( array $meta_boxes ) {
 		'fields' => array( // Need long array syntax to please coding standards sniffer.
 			[ 'id' => 'event-date', 'name' => 'Event date', 'type' => 'datetime_unix' ],
 			[ 'id' => 'event-location-string', 'name' => 'Event Location (display)', 'type' => 'text' ],
-			// [ 'id' => 'event-location-coordinates', 'name' => 'Event Location (coordinates)', 'type' => 'gmap', 'cols' => 6 ],
+			[ 'id' => 'event-location-link', 'name' => 'Event Location (link)', 'type' => 'url' ],
 			[ 'id' => 'event-ticket-link', 'name' => 'Event Ticket Link', 'type' => 'url' ],
 		),
 	);

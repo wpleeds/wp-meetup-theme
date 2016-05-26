@@ -11,11 +11,11 @@ namespace WPMeetup;
 
 <article class="entry">
 
-	<h2 class="entry-title">
+	<h3 class="entry-title">
 		<a href="<?php the_permalink(); ?>">
 			<?php the_title(); ?>
 		</a>
-	</h2>
+	</h3>
 
 	<small class="entry-meta">
 		<?php the_date( 'jS F Y, H:i' ); ?> | <?php the_author_posts_link(); ?>

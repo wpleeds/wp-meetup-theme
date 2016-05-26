@@ -3,7 +3,8 @@ img {
 	height: auto;
 
 	.entry & {
-		margin: .75rem 0;
+		margin-top: .75rem;
+		margin-bottom: .75rem;
 	}
 }
 
@@ -24,6 +25,10 @@ img {
 
 .grid-item-8 {
 
+}
+
+.size-large {
+	width: 100%;
 }
 
 
