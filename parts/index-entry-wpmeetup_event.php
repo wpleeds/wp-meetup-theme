@@ -21,7 +21,11 @@ namespace WPMeetup;
 			</a>
 		</h3>
 
-		<p><?php Events\the_event_location(); ?></p>
+		<p><?php the_excerpt(); ?></p>
+
+		<?php if ( ! empty( Events\get_event_location( $post_id ) ) ) : ?>
+			<p><b>Location:</b> <?php Events\the_event_location(); ?></p>
+		<?php endif; ?>
 
 	</div>
 

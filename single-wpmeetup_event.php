@@ -25,7 +25,13 @@ get_header();
 
 			<p>
 				<b>Date:</b> <?php Events\the_event_date( 'jS F, H:i' ); ?> <br/>
-				<b>Location:</b> <?php Events\the_event_location(); ?>
+
+				<?php if ( ! empty( Events\get_event_location_link() ) ) : ?>
+					<b>Location:</b> <a href="<?php Events\the_event_location_link(); ?>"><?php Events\the_event_location(); ?></a>
+				<?php else : ?>
+					<b>Location:</b> <?php Events\the_event_location(); ?>
+				<?php endif; ?>
+
 			</p>
 
 			<?php if ( Events\is_future_event() && $url = Events\get_event_ticket_link() ) : ?>
