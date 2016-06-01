@@ -6,25 +6,26 @@
 
 @mixin font-xl {
 	font-size: $font-size-beta;
-	line-height: $base-line-height * 1.5;
+	line-height: $base-line-height * 1.75;
 	margin: .75rem auto;
 }
 
 @mixin font-lg {
 	font-size: $font-size-gamma;
-	line-height: $base-line-height * 1.25;
+	line-height: $base-line-height * 1.5;
 	margin: .75rem auto;
 }
 
 @mixin font-md {
 	font-size: $font-size-delta;
-	line-height: $base-line-height;
+	line-height: $base-line-height * 1.25;
 	margin: .75rem auto;
 }
 
 // Standard.
 @mixin font-std {
 	font-size: $font-size-base;
+	line-height: $base-line-height;
 	margin: .75rem auto;
 }
 

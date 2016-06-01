@@ -46,8 +46,24 @@
 		}
 	}
 
+	&.btn-loading {
+
+		position: relative;
+
+		&:before {
+			content: ' ';
+			display: inline-block;
+			width: 1.5rem;
+			height: 1.5rem;
+			vertical-align: bottom;
+			margin-right: .75rem;
+			background: #FF0000;
+		}
+	}
+
 }
 
 .btn-container {
 	margin: 1.5rem auto;
 }
+

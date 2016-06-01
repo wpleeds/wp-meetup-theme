@@ -1,8 +1,8 @@
 module.exports =  {
-	cache: true,
 	devtool: 'source-map',
 	entry: {
 		theme: './assets/src/scripts/theme.js',
+		customizer: './assets/src/scripts/customizer.js',
 	},
 	output: {
 		path: 'assets/dist/scripts',

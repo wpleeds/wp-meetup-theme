@@ -61,3 +61,8 @@
 		margin-left: calc( -120px - #{ $grid-gutter } );
 	}
 }
+
+.entry-pagination {
+	@include clearfix;
+	text-align: center;
+}

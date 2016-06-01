@@ -196,3 +196,10 @@ hr {
 	border-width: 0 0 1px 0;
 	margin: 0 0 $base-line-height 0;
 }
+
+a {
+	&:link    { color: $color-link; }
+	&:visited { color: $color-link-visited; }
+	&:hover,
+	&:focus   { color: $color-link-hover; }
+}
