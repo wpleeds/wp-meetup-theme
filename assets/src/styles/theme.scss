@@ -25,9 +25,13 @@ $color-btn-primary:   #8fd86b;
 $color-btn-secondary: #21759B;
 $color-border-lt:     #DDD;
 
+$color-link:          #CC0000;
+$color-link-visited:  #AA0000;
+$color-link-hover:    #FF0000;
 
 @import url( 'http://fonts.googleapis.com/css?family=Open+Sans' );
 
+@import "global/_mixins.scss";
 @import "global/_normalize.scss";
 @import "global/_icons.scss";
 @import "global/_type.scss";

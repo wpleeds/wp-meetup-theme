@@ -22,7 +22,7 @@
 
 	@for $i from 1 through 9 {
 		&.gallery-columns-#{$i} .gallery-item {
-			flex: 0 0 #{ 100/$i }%;
+			flex: 0 0 #{ 100%/$i };
 		}
 	}
 

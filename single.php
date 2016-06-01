@@ -27,6 +27,10 @@ get_header();
 				<?php the_date( 'jS F Y, H:i' ); ?> | <?php the_author_posts_link(); ?>
 			</small>
 
+			<div class="post-featured-image">
+				<?php the_post_thumbnail( 'large' ); ?>
+			</div>
+
 			<div class="post-content">
 				<?php the_content(); ?>
 			</div>

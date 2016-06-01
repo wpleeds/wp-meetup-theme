@@ -10,6 +10,7 @@
 namespace WPMeetup;
 
 require_once( __DIR__ . '/inc/events/events.php' );
+require_once( __DIR__ . '/inc/customizer/customizer.php' );
 
 add_action( 'after_setup_theme',  __NAMESPACE__ . '\\setup' );
 add_action( 'after_setup_theme',  __NAMESPACE__ . '\\content_width', 0 );
