@@ -1,6 +1,6 @@
 
-table					{
-	border-collapse: separate;
+table {
+	border-collapse: collapse;
 	border: 1px solid $color-border-lt;
 	position: relative;
 	margin: #{ $base-line-height / 2 } 0 #{ $base-line-height / 2 };
@@ -9,7 +9,7 @@ table					{
 }
 
 th,
-td					{
+td {
 	line-height: 1.5em;
 	padding: 0.308em 14px 0.308em 10px;
 	text-align:left;

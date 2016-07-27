@@ -1,5 +1,5 @@
 @function grid-item( $columns, $total_columns: 12 ) {
-	@return #{ $columns / $total_columns * 100 }%;
+	@return $columns / $total_columns * 100%;
 }
 
 .grid {
