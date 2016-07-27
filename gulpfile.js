@@ -73,7 +73,7 @@ gulp.task( 'svg', () => {
 } );
 
 // Watch for changes in JS/CSS.
-gulp.task('watch', () => {}
+gulp.task('watch', () => {
 	gulp.watch( 'assets/src/styles/**/*.scss', ['styles'] );
 	gulp.watch( ['assets/src/scripts/**/*.js'], ['js'] );
 });
