@@ -55,22 +55,27 @@ h4, h5, h6 {
 
 h1, .h1	 {
 	@include font-xxl;
+	margin-top: 3rem;
 }
 
 h2, .h2    {
 	@include font-xl;
+	margin-top: 3rem;
 }
 
 h3, .h3   {
 	@include font-lg;
+	margin-top: 2rem;
 }
 
 h4, .h4   {
 	@include font-md;
+	margin-top: 2rem;
 }
 
 h5, .h5 {
 	@include font-std;
+	margin-top: 1.5rem;
 }
 
 h6, .h6,
