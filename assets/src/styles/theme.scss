@@ -48,6 +48,8 @@ $color-border-lt:     #DDD;
 @import "modules/_widget-social.scss";
 @import "modules/_search-form.scss";
 
+@import "global/_hacks.scss";
+
 html, body {
 	background: #FFF;
 }
