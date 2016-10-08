@@ -19,6 +19,12 @@ add_filter( 'body_class',         __NAMESPACE__ . '\\filter_body_class' );
 add_filter( 'script_loader_tag',  __NAMESPACE__ . '\\filter_script_loader_tag', 10, 3 );
 add_action( 'admin_menu',         __NAMESPACE__ . '\\modify_admin_menu' );
 
+if ( ! function_exists( 'cmb_init' ) ) {
+	define( 'CMB_PATH', __DIR__ . '/lib/custom-meta-boxes' );
+	define( 'CMB_URL', get_stylesheet_directory_uri() . '/lib/custom-meta-boxes' );
+	require_once( 'lib/custom-meta-boxes/custom-meta-boxes.php' );
+}
+
 /**
  * Set up the theme.
  */
